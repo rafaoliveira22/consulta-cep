@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+
+    <link rel="shortcut icon" href="assets/img/logo.png" type="image/x-icon">
+    <title>Consulta Cep</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <img src="assets/img/logo.png" alt="">
+        </header>
+        <main>
+            <section class="container">
+                <section class="container-info">
+                    <h1> 
+                        <p>Olá, seja bem vindo a página pra</p> consulta de endereço.
+                    </h1>
+                </section>
+                <section class="container-consult">
+                    <input type="number" id="txtCep" required="" placeholder="cep..." min="0" max="9" maxlength="7">
+                    <button id="consult-address">Consultar</button>
+                </section>
+                <section class="container-result">
+                    <h2>Resultado:</h2>
+                    <!--<output id="city">city</output>
+                    <output id="district">district</output> -->
+                    <output id="street">Cidade,Bairro,Rua</output>
+                </section>                
+            </section>
+        </main>
+</div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
