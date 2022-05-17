@@ -1,19 +1,24 @@
-const boxCep = document.querySelector('input#txtCep')
-const cep = boxCep.value
-
-const BASE_URL = `https://viacep.com.br/ws/06526020/json/`
-
+const BASE_URL = `https://viacep.com.br/ws/01001000/json/`
 
 const getAddress = async() =>{
     try{
-        const data = await fetch(BASE_URL)
-        const json = await data.json()
-        const dataJson = [json.localidade,json.bairro,json.logradouro]
-        
-        return dataJson
+        const strCep = document.querySelector('input#txtCep').value
+
+        if(strCep == '' || strCep.length > 8){
+            alert("[ERRO] Cep inválido 😞")
+        } else{ 
+            cep = Number(strCep)    
+            const BASE_URL = `https://viacep.com.br/ws/0${cep}/json/`
+
+            const data = await fetch(BASE_URL)
+            const json = await data.json()
+            const dataJson = [json.localidade,json.bairro,json.logradouro]
+
+            return dataJson
+        } // else
     } catch(e){
-        console.log(e.message)
-    }
+        alert(e.message)
+    } // try
 } // getAddress
 
 const loadAddress = async() =>{
@@ -24,6 +29,7 @@ const loadAddress = async() =>{
 
 const btn = document.querySelector('button#consult-address')
 btn.addEventListener('click', loadAddress)
+
 
 
 
