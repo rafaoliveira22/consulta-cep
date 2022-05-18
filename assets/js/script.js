@@ -24,7 +24,7 @@ const getAddress = async() =>{
 
 const loadAddress = async() =>{
     const street = document.querySelector('output#street')
-    street.innerHTML = await getAddress()
+    street.innerHTML = '<strong>' + await getAddress() + '</strong>'
 
 
 } // loadAddress
